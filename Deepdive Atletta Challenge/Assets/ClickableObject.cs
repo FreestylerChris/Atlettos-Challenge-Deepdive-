@@ -15,12 +15,12 @@ public class ClickableObject : MonoBehaviour
     public void Select()
     {
         rend.material.color = Color.green; // geselecteerde kleur
-        Switch++;
+        Switch = 1;
     }
 
     public void Deselect()
     {
         rend.material.color = originalColor; // terug naar normaal
-        Switch--;
+        Switch = 0;
     }
 }
