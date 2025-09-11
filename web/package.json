@@ -1,0 +1,14 @@
+{
+  "name": "netherlands-visualization",
+  "version": "1.0.0",
+  "description": "Unity WebGL integration with Tailwind CSS for Netherlands provinces visualization",
+  "scripts": {
+    "build-css": "tailwindcss -i ./css/input.css -o ./css/style.css",
+    "watch-css": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "dev": "npm run watch-css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}
