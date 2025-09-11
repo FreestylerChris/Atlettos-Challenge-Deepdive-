@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-    private ClickableObject lastSelected;
+    public ClickableObject lastSelected;
 
     void Update()
     {
