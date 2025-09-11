@@ -1,5 +1,6 @@
-using UnityEngine;
+using Sunbox.Avatars;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DataList : MonoBehaviour
@@ -12,16 +13,19 @@ public class DataList : MonoBehaviour
     public Button submitButton;
 
     [Header("Data")]
-    public DataSearch dataStorage; // Je DataSearch script dat de provincie selectie en actuele data beheert
+    public DataSearch dataStorage; // Script dat provincie selectie en stats beheert
+
+    [Header("Avatar")]
+    public AvatarCustomization character; // Je 3D-avatar met AvatarCustomization script
 
     void Start()
     {
         submitButton.onClick.AddListener(OnSubmit);
     }
 
-    public void OnSubmit()
+    void OnSubmit()
     {
-        // Haal de geselecteerde provincie op van DataSearch
+        // Haal de geselecteerde provincie op
         string provinceName = dataStorage.GetSelectedProvinceName();
         ProvinceStats stats = dataStorage.GetSelectedProvinceStats();
 
@@ -45,11 +49,17 @@ public class DataList : MonoBehaviour
         float weightPercent = ((userWeight - stats.avg_weight) / stats.avg_weight) * 100f;
         float caloriesPercent = ((userCalories - stats.avg_calories) / stats.avg_calories) * 100f;
 
-        // Toon resultaat
+        // Toon resultaat in UI
         resultText.text =
             $"Provincie: {provinceName}\n" +
             $"Height: {heightPercent:+0.##;-0.##}% t.o.v. gemiddelde\n" +
             $"Weight: {weightPercent:+0.##;-0.##}% t.o.v. gemiddelde\n" +
             $"Calories: {caloriesPercent:+0.##;-0.##}% t.o.v. gemiddelde";
+
+        // Pas gemiddelde stats toe op de avatar
+        if (character != null)
+        {
+            character.ApplyProvinceStats(stats);
+        }
     }
 }
