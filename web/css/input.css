@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Custom components for your Unity integration */
+@layer components {
+    .unity-container {
+        @apply flex-[2] bg-black rounded-lg overflow-hidden relative;
+    }
+
+    .filter-container {
+        @apply flex-1 bg-white p-5 rounded-lg shadow-lg overflow-y-auto;
+    }
+
+    .form-input {
+        @apply w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all;
+    }
+
+    .btn-primary {
+        @apply w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98];
+    }
+}
+
+@font-face {
+    font-family: "Jersey20";
+    src: url("../font/Jersey20-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-jersey: "Jersey20", sans-serif;
+
+    /* custom colors */
+    --color-primary-50: #1F64B3;
+    --color-primary-100: #054A99;
+    --color-accent: #FFEA00;
+
+}
+
+.outl {
+    border: 2px solid red;
+}
