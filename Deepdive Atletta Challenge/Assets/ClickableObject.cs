@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
+
     private Renderer rend;
     private Color originalColor;
     public int Switch;
@@ -23,4 +24,5 @@ public class ClickableObject : MonoBehaviour
         rend.material.color = originalColor; // terug naar normaal
         Switch = 0;
     }
+
 }

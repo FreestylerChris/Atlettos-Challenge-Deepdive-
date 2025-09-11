@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Billel/Main.unity
     guid: a4deae86630b48747a7757a92029ba5e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Billel/Game.unity
     guid: 9f4ca12607acf324183106a3e704cf79
   m_configObjects: {}

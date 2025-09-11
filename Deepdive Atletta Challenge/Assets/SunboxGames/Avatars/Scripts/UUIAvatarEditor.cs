@@ -100,7 +100,7 @@ namespace Sunbox.Avatars {
             });
 
             RandomizeButton.onClick.AddListener(() => {
-                Avatar.RandomizeBodyParameters();
+
                 Avatar.RandomizeClothing();
                 _isZoomed = false;
 
